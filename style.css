@@ -32,7 +32,7 @@ body::before {
     opacity: .8;
     z-index: 2;
     text-align: center;
-    animation: slideIn 0.4s ease-out; /* Apply the animation */
+    animation: slideIn 0.4s ease-out; Apply the animation
 }
 
 .image-content {
@@ -102,5 +102,12 @@ body::before {
     to {
         transform: translateY(0);
         opacity: 0.8;
+    }
+}
+
+@media (max-width: 600px) {
+    .card {
+        width: 80%;
+        max-width: none;
     }
 }
