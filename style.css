@@ -1,0 +1,106 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Roboto Mono', 'Courier New', Courier, monospace; /* Use monospaced font */
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Adjust the opacity as needed */
+    z-index: 1;
+}
+
+.card {
+    background-color: #fff;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+    opacity: .8;
+    z-index: 2;
+    text-align: center;
+    animation: slideIn 0.4s ease-out; /* Apply the animation */
+}
+
+.image-content {
+    text-align: center; /* Center the image */
+    margin-bottom: 20px; /* Space between image and text */
+}
+
+.image-content img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.text-content {
+    position: relative;
+}
+
+.text-content .title-container {
+    text-align: center;
+}
+
+.card h1 {
+    font-size: 2em;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 22px solid black; /* Cursor effect */
+    animation: typing 1s steps(14, end), blink-caret 0.75s step-end infinite; /* Adjust steps to match character count */
+}
+
+.card p {
+    margin: 5px 0;
+}
+
+.card a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+.delimiter {
+    margin: 25px 0;
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+}
+
+/* Define the slideIn animation */
+@keyframes slideIn {
+    from {
+        transform: translateY(-20%); /* Slide a shorter distance */
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+}
