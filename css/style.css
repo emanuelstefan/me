@@ -5,9 +5,10 @@ body {
     height: 100vh;
     margin: 0;
     font-family: 'Roboto Mono', 'Courier New', Courier, monospace; /* Use monospaced font */
-    background: url('../img/background.jpg') no-repeat center center fixed;
+    background: url('../img/backgrounds/1.jpg') no-repeat center center fixed;
     background-size: cover;
     position: relative;
+    transition: background 1s ease-in-out; /* Add transition for fade effect */
 }
 
 body::before {
@@ -32,7 +33,7 @@ body::before {
     opacity: .8;
     z-index: 2;
     text-align: center;
-    animation: slideIn 0.4s ease-out; Apply the animation
+    animation: slideIn 0.4s ease-out; /* Apply the animation */
 }
 
 .image-content {
@@ -45,6 +46,7 @@ body::before {
     width: 150px;
     height: 150px;
     object-fit: cover;
+    border: solid 3px #61793b;
 }
 
 .text-content {
