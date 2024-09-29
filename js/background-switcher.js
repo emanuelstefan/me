@@ -1,9 +1,9 @@
 const images = [
-    'img/backgrounds/1.jpg',
-    'img/backgrounds/2.jpg',
-    'img/backgrounds/3.jpg',
-    'img/backgrounds/4.jpg',
-    'img/backgrounds/5.jpg'
+    'img/backgrounds/1.webp',
+    'img/backgrounds/2.webp',
+    'img/backgrounds/3.webp',
+    'img/backgrounds/4.webp',
+    'img/backgrounds/5.webp'
 ];
 
 let currentIndex = 0;
