@@ -5,7 +5,7 @@ body {
     height: 100vh;
     margin: 0;
     font-family: 'Roboto Mono', 'Courier New', Courier, monospace; /* Use monospaced font */
-    background: url('../img/backgrounds/1.webp') no-repeat center center fixed;
+    background: url('../img/backgrounds/1.jpg') no-repeat center center fixed;
     background-size: cover;
     position: relative;
     transition: background 1s ease-in-out; /* Add transition for fade effect */
