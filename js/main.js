@@ -59,6 +59,7 @@
     var langToggle = document.getElementById('lang-toggle');
     var translatable = document.querySelectorAll('[data-ro][data-en]');
     var langOpts = document.querySelectorAll('.lang-opt');
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     var titles = {
         ro: 'Emanuel Ștefan — Software care mișcă afacerea ta înainte',
@@ -70,6 +71,40 @@
         if (stored === 'ro' || stored === 'en') return stored;
         var nav = (navigator.language || 'ro').toLowerCase();
         return nav.indexOf('ro') === 0 ? 'ro' : 'en';
+    }
+
+    /* --------------------------------------------------------------------
+       Hero headline typewriter
+       -------------------------------------------------------------------- */
+
+    var heroHeadline = document.getElementById('hero-headline');
+    var typeTimer = null;
+
+    function typewriteHero(lang) {
+        if (!heroHeadline) return;
+        var text = heroHeadline.getAttribute('data-type-' + lang) || '';
+        heroHeadline.setAttribute('aria-label', text);
+
+        if (typeTimer) clearInterval(typeTimer);
+
+        if (reduceMotion) {
+            heroHeadline.textContent = text;
+            heroHeadline.classList.add('is-done');
+            return;
+        }
+
+        heroHeadline.classList.remove('is-done');
+        heroHeadline.textContent = '';
+        var i = 0;
+
+        typeTimer = setInterval(function () {
+            i++;
+            heroHeadline.textContent = text.slice(0, i);
+            if (i >= text.length) {
+                clearInterval(typeTimer);
+                heroHeadline.classList.add('is-done');
+            }
+        }, 28);
     }
 
     function applyLang(lang) {
@@ -85,6 +120,8 @@
         document.documentElement.setAttribute('lang', lang);
         document.title = titles[lang] || titles.ro;
         localStorage.setItem(STORAGE_KEY, lang);
+
+        typewriteHero(lang);
     }
 
     var lang = detectDefaultLang();
