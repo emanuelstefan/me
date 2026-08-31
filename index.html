@@ -9,7 +9,7 @@
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&family=Domine:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Work+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
@@ -24,10 +24,11 @@
         <main class="window">
 
             <nav class="nav">
-                <a href="#top" class="nav__mark">ES</a>
+                <a href="#despre" class="nav__mark">ES</a>
 
                 <div class="nav__links">
                     <a href="#despre" class="nav__link" data-ro="Despre" data-en="About">Despre</a>
+                    <a href="#experienta" class="nav__link" data-ro="Experiență" data-en="Experience">Experiență</a>
                     <a href="#contact" class="nav__link" data-ro="Contact" data-en="Contact">Contact</a>
                 </div>
 
@@ -36,100 +37,244 @@
                 </button>
             </nav>
 
+            <div class="masthead">
+                <span class="masthead__label" id="masthead-label">01 — DESPRE</span>
+                <span class="masthead__rule" aria-hidden="true"></span>
+                <span class="masthead__coords">TIMIȘOARA, RO · 45.75°N</span>
+            </div>
+
             <div class="panel-scroll" id="panel-scroll">
 
-                <section id="top" class="section hero">
-                    <div class="hero__top">
-                        <p class="eyebrow" data-ro="14+ ANI ÎN SOFTWARE · TIMIȘOARA, RO" data-en="14+ YEARS IN SOFTWARE · TIMIȘOARA, RO">14+ ANI ÎN SOFTWARE · TIMIȘOARA, RO</p>
-                        <div class="hero__portrait">
-                            <svg class="hero__rings" viewBox="0 0 200 200" aria-hidden="true">
-                                <circle cx="100" cy="100" r="98" />
-                                <circle cx="100" cy="100" r="86" />
-                                <circle cx="100" cy="100" r="74" />
-                            </svg>
-                            <img src="img/me_sq.jpeg" alt="Emanuel Ștefan" width="88" height="88">
+                <section id="despre" class="section despre">
+                    <div class="split">
+                        <div class="split__main">
+                            <p class="kicker">
+                                <span class="kicker__accent">14+</span>
+                                <span data-ro="ANI ÎN SOFTWARE LA COMANDĂ" data-en="YEARS BUILDING SOFTWARE ON DEMAND">ANI ÎN SOFTWARE LA COMANDĂ</span>
+                            </p>
+
+                            <h1 class="editorial-h1">
+                                <span data-ro="Software solid," data-en="Software that's solid,">Software solid,</span><br>
+                                <span data-ro="gândit temeinic," data-en="thought through,">gândit temeinic,</span><br>
+                                <span class="editorial-h1__accent" data-ro="creat să dureze" data-en="built to last">creat să dureze</span><span class="blink-caret" aria-hidden="true"></span>
+                            </h1>
+
+                            <div class="profile-row">
+                                <div class="profile-row__label" data-ro="PROFIL" data-en="PROFILE">PROFIL</div>
+                                <p>
+                                    <span data-ro="Sunt " data-en="I'm ">Sunt </span><strong>Emanuel</strong><span data-ro=", inginer software. Ajut companiile să-și eficientizeze procesele interne și să crească sustenabil — transform haosul operațional în sisteme clare, automatizate și integrate temeinic." data-en=", a software engineer. I help companies streamline their internal processes and grow sustainably — turning operational chaos into clear, automated, and thoroughly integrated systems.">, inginer software. Ajut companiile să-și eficientizeze procesele interne și să crească sustenabil — transform haosul operațional în sisteme clare, automatizate și integrate temeinic.</span>
+                                </p>
+                            </div>
+
+                            <div class="hero__actions">
+                                <a href="tel:+40744387098" class="btn btn--primary">
+                                    <span data-ro="Sună direct" data-en="Call directly">Sună direct</span>
+                                    <span class="btn__arrow" aria-hidden="true">→</span>
+                                </a>
+                                <a href="#contact" class="btn btn--ghost">
+                                    <span data-ro="Trimite email" data-en="Send an email">Trimite email</span>
+                                </a>
+                                <span class="micro-note" data-ro="RĂSPUND ÎN < 24H" data-en="I REPLY WITHIN 24H">RĂSPUND ÎN &lt; 24H</span>
+                            </div>
                         </div>
-                    </div>
 
-                    <h1 class="hero__headline" id="hero-headline" data-type-ro="Software solid, gândit temeinic, creat să dureze — ca o unealtă bună." data-type-en="Software that's solid, well thought-out, built to last — like a good tool." aria-label="Software solid, gândit temeinic, creat să dureze — ca o unealtă bună.">Software solid, gândit temeinic, creat să dureze — ca o unealtă bună.</h1>
-
-                    <div class="hero__deck">
-                        <p class="hero__lead" data-ro="Sunt Emanuel, inginer software cu 14 ani de experiență. Ajut companiile să-și eficientizeze procesele interne și să crească sustenabil, transformând haosul operațional în sisteme clare, automatizate și integrate temeinic." data-en="I am Emanuel, a software engineer with 14 years of experience. I help companies streamline their internal processes and grow sustainably by turning operational chaos into clear, automated, and thoroughly integrated systems.">Sunt Emanuel, inginer software cu 14 ani de experiență. Ajut companiile să-și eficientizeze procesele interne și să crească sustenabil, transformând haosul operațional în sisteme clare, automatizate și integrate temeinic.</p>
-
-                        <div class="hero__actions">
-                            <a href="tel:+40744387098" class="btn btn--primary">
-                                <span data-ro="Sună direct" data-en="Call directly">Sună direct</span>
-                            </a>
-                            <a href="mailto:stefancostiemanuel@gmail.com" class="btn btn--ghost">
-                                <span data-ro="Trimite email" data-en="Send an email">Trimite email</span>
-                            </a>
+                        <div class="split__side">
+                            <div class="portrait-lg">
+                                <span class="portrait-lg__ring"></span>
+                                <span class="portrait-lg__ring portrait-lg__ring--delay"></span>
+                                <img src="img/me_sq.jpeg" alt="Emanuel Ștefan">
+                            </div>
+                            <div class="meta-block">
+                                <div class="meta-block__name">EMANUEL S.</div>
+                                <div data-ro="INGINER SOFTWARE" data-en="SOFTWARE ENGINEER">INGINER SOFTWARE</div>
+                                <div class="meta-block__divider">
+                                    <div data-ro="SISTEME INTERNE" data-en="INTERNAL SYSTEMS">SISTEME INTERNE</div>
+                                    <div data-ro="AUTOMATIZĂRI" data-en="AUTOMATION">AUTOMATIZĂRI</div>
+                                    <div data-ro="INTEGRĂRI" data-en="INTEGRATIONS">INTEGRĂRI</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
 
                 <hr class="divider">
 
-                <section id="despre" class="section about">
-                    <p class="eyebrow" data-ro="DESPRE" data-en="ABOUT">DESPRE</p>
-                    <h2 data-ro="De ce lucrezi cu mine" data-en="Why work with me">De ce lucrezi cu mine</h2>
+                <section id="experienta" class="section experienta">
+                    <div class="exp__top">
+                        <div class="exp__main">
+                            <p class="kicker">
+                                <span class="kicker__accent">2011</span>
+                                <span data-ro="→ PREZENT" data-en="→ PRESENT">→ PREZENT</span>
+                            </p>
+                            <h2 class="editorial-h2">
+                                <span data-ro="Sisteme care rămân" data-en="Systems that stay">Sisteme care rămân</span> <span class="editorial-h1__accent" data-ro="în producție." data-en="in production.">în producție.</span>
+                            </h2>
+                            <p data-ro="Patrusprezece ani de la primul script de automatizare până la platforme interne folosite zilnic de sute de oameni. Mai jos, traseul pe scurt." data-en="Fourteen years from the first automation script to internal platforms used daily by hundreds of people. Here's the short version.">Patrusprezece ani de la primul script de automatizare până la platforme interne folosite zilnic de sute de oameni. Mai jos, traseul pe scurt.</p>
+                        </div>
 
-                    <div class="about__body indent">
-                        <p data-ro="În ultimii 14 ani am scris și livrat software pentru echipe din fintech, educație, sănătate și management de proiecte — inclusiv un ecosistem folosit de peste 30.000 de școli și de jumătate din companiile Fortune 100. Am fost și team lead, și trainer pentru viitori dezvoltatori, așa că știu la fel de bine să construiesc cod cât și să explic clar ce se întâmplă cu el." data-en="Over the past 14 years I've written and shipped software for teams in fintech, education, healthcare, and project management — including an ecosystem used by over 30,000 schools and half of the Fortune 100 companies. I've also been a team lead and a trainer for future developers, so I'm just as comfortable writing the code as I am explaining what it does and why.">În ultimii 14 ani am scris și livrat software pentru echipe din fintech, educație, sănătate și management de proiecte — inclusiv un ecosistem folosit de peste 30.000 de școli și de jumătate din companiile Fortune 100. Am fost și team lead, și trainer pentru viitori dezvoltatori, așa că știu la fel de bine să construiesc cod cât și să explic clar ce se întâmplă cu el.</p>
+                        <div class="exp__stats">
+                            <div class="stat">
+                                <div class="stat__num">14</div>
+                                <div class="stat__label" data-ro="ANI EXPERIENȚĂ" data-en="YEARS EXPERIENCE">ANI EXPERIENȚĂ</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat__num">8</div>
+                                <div class="stat__label" data-ro="COMPANII" data-en="COMPANIES">COMPANII</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat__num">6</div>
+                                <div class="stat__label" data-ro="INDUSTRII" data-en="INDUSTRIES">INDUSTRII</div>
+                            </div>
+                        </div>
+                    </div>
 
-                        <p data-ro="Dincolo de ecran, fac lucruri cu mâinile mele — tâmplărie și design grafic. Cred în același principiu peste tot: dacă merită construit, merită construit bine, ca să reziste." data-en="Away from the screen, I build things with my hands too — woodworking and graphic design. Same principle everywhere: if it's worth building, it's worth building well, to last.">Dincolo de ecran, fac lucruri cu mâinile mele — tâmplărie și design grafic. Cred în același principiu peste tot: dacă merită construit, merită construit bine, ca să reziste.</p>
+                    <div class="timeline">
+                        <div class="timeline__row">
+                            <div class="timeline__years">2022 — PREZENT</div>
+                            <div>
+                                <div class="timeline__title" data-ro="Senior software engineer &amp; team lead" data-en="Senior software engineer &amp; team lead">Senior software engineer &amp; team lead</div>
+                                <div class="timeline__tag" data-ro="ARHITECTURĂ · LEADERSHIP" data-en="ARCHITECTURE · LEADERSHIP">ARHITECTURĂ · LEADERSHIP</div>
+                            </div>
+                            <p data-ro="La Ativion și, din 2024, la Devtactics, am dus funcționalități de la idee la producție pentru un ecosistem folosit de peste 30.000 de școli și jumătate din companiile Fortune 100 — și am condus, pentru o vreme, echipa care le construiește." data-en="At Ativion and, since 2024, at Devtactics, I took features from idea to production for an ecosystem used by over 30,000 schools and half of the Fortune 100 — and for a while, led the team building them.">La Ativion și, din 2024, la Devtactics, am dus funcționalități de la idee la producție pentru un ecosistem folosit de peste 30.000 de școli și jumătate din companiile Fortune 100 — și am condus, pentru o vreme, echipa care le construiește.</p>
+                        </div>
 
-                        <ul class="tag-row">
-                            <li>Ruby on Rails</li>
-                            <li>React</li>
-                            <li>PostgreSQL</li>
-                            <li>Docker</li>
-                            <li><span data-ro="Leadership de echipă" data-en="Team leadership">Leadership de echipă</span></li>
-                        </ul>
+                        <div class="timeline__row">
+                            <div class="timeline__years">2019 — 2022</div>
+                            <div>
+                                <div class="timeline__title" data-ro="Software engineer, echipe distribuite" data-en="Software engineer, distributed teams">Software engineer, echipe distribuite</div>
+                                <div class="timeline__tag" data-ro="RUBY ON RAILS · REACT" data-en="RUBY ON RAILS · REACT">RUBY ON RAILS · REACT</div>
+                            </div>
+                            <p data-ro="Backend și frontend pentru aplicații la scară — de la un produs de project management la o soluție pentru industria de sănătate, alături de echipe multinaționale." data-en="Backend and frontend for applications at scale — from a project management product to a healthcare-industry solution, alongside multinational teams.">Backend și frontend pentru aplicații la scară — de la un produs de project management la o soluție pentru industria de sănătate, alături de echipe multinaționale.</p>
+                        </div>
+
+                        <div class="timeline__row">
+                            <div class="timeline__years">2014 — 2019</div>
+                            <div>
+                                <div class="timeline__title" data-ro="Software engineer, FinTech &amp; agenție" data-en="Software engineer, FinTech &amp; agency">Software engineer, FinTech &amp; agenție</div>
+                                <div class="timeline__tag" data-ro="BACKEND · RUBY ON RAILS" data-en="BACKEND · RUBY ON RAILS">BACKEND · RUBY ON RAILS</div>
+                            </div>
+                            <p data-ro="Cinci ani de backend Ruby on Rails, în mare parte pe o soluție FinTech — planificare, dezvoltare și testare pentru un produs cu miză reală." data-en="Five years of Ruby on Rails backend work, mostly on a FinTech solution — planning, development, and testing for a product with real stakes.">Cinci ani de backend Ruby on Rails, în mare parte pe o soluție FinTech — planificare, dezvoltare și testare pentru un produs cu miză reală.</p>
+                        </div>
+
+                        <div class="timeline__row">
+                            <div class="timeline__years">2011 — 2014</div>
+                            <div>
+                                <div class="timeline__title" data-ro="Primele sisteme" data-en="The first systems">Primele sisteme</div>
+                                <div class="timeline__tag" data-ro="AUTOMATIZARE · SCADA" data-en="AUTOMATION · SCADA">AUTOMATIZARE · SCADA</div>
+                            </div>
+                            <p data-ro="De la interfețe SCADA la primele aplicații web — aici am învățat că un sistem bun pornește de la o problemă reală, nu de la o tehnologie la modă." data-en="From SCADA interfaces to my first web applications — this is where I learned that a good system starts from a real problem, not a trendy technology.">De la interfețe SCADA la primele aplicații web — aici am învățat că un sistem bun pornește de la o problemă reală, nu de la o tehnologie la modă.</p>
+                        </div>
+                    </div>
+
+                    <div class="hero__actions">
+                        <a href="#contact" class="btn btn--primary">
+                            <span data-ro="Discutăm proiectul tău" data-en="Let's discuss your project">Discutăm proiectul tău</span>
+                            <span class="btn__arrow" aria-hidden="true">→</span>
+                        </a>
+                        <span class="micro-note" data-ro="CV COMPLET LA CERERE" data-en="FULL CV ON REQUEST">CV COMPLET LA CERERE</span>
                     </div>
                 </section>
 
                 <hr class="divider">
 
                 <section id="contact" class="section contact">
-                    <p class="eyebrow" data-ro="CONTACT" data-en="CONTACT">CONTACT</p>
-                    <h2 data-ro="Hai să vorbim despre afacerea ta" data-en="Let's talk about your business">Hai să vorbim despre afacerea ta</h2>
+                    <div class="split">
+                        <div class="split__main">
+                            <p class="kicker">
+                                <span class="kicker__accent" data-ro="RĂSPUND" data-en="I REPLY">RĂSPUND</span>
+                                <span data-ro="ÎN MAI PUȚIN DE 24H" data-en="WITHIN 24 HOURS">ÎN MAI PUȚIN DE 24H</span>
+                            </p>
 
-                    <div class="contact__body indent">
-                        <p data-ro="Cel mai simplu e printr-un telefon — răspund direct. Sau scrie-mi și revin repede." data-en="Easiest is a phone call — I pick up directly. Or write to me and I'll get back to you quickly.">Cel mai simplu e printr-un telefon — răspund direct. Sau scrie-mi și revin repede.</p>
+                            <h1 class="editorial-h1 editorial-h1--md">
+                                <span data-ro="Spune-mi ce te" data-en="Tell me what's">Spune-mi ce te</span> <span class="editorial-h1__accent" data-ro="încetinește." data-en="slowing you down.">încetinește.</span><span class="blink-caret" aria-hidden="true"></span>
+                            </h1>
 
-                        <ul class="contact-list">
-                            <li>
-                                <a href="tel:+40744387098">
-                                    <span class="contact-list__label" data-ro="Telefon" data-en="Phone">Telefon</span>
-                                    <span class="contact-list__value">+40 744 387 098</span>
+                            <div class="profile-row">
+                                <div class="profile-row__label" data-ro="CUM" data-en="HOW">CUM</div>
+                                <p data-ro="Un telefon de 15 minute e de obicei suficient ca să știm amândoi dacă are sens să lucrăm împreună. Vino cu problema, nu cu soluția — restul îl clarificăm împreună." data-en="A 15-minute call is usually enough for both of us to know if it makes sense to work together. Come with the problem, not the solution — we'll figure out the rest together.">Un telefon de 15 minute e de obicei suficient ca să știm amândoi dacă are sens să lucrăm împreună. Vino cu problema, nu cu soluția — restul îl clarificăm împreună.</p>
+                            </div>
+
+                            <ul class="channels">
+                                <li>
+                                    <a href="tel:+40744387098">
+                                        <span class="channels__label" data-ro="TELEFON" data-en="PHONE">TELEFON</span>
+                                        <span class="channels__value">+40 744 387 098</span>
+                                        <span class="channels__note" data-ro="CEL MAI RAPID" data-en="FASTEST">CEL MAI RAPID</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="mailto:stefancostiemanuel@gmail.com">
+                                        <span class="channels__label">EMAIL</span>
+                                        <span class="channels__value">stefancostiemanuel@gmail.com</span>
+                                        <span class="channels__note">&lt; 24H</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <span class="channels__row">
+                                        <span class="channels__label" data-ro="LOCAȚIE" data-en="LOCATION">LOCAȚIE</span>
+                                        <span class="channels__value" data-ro="Timișoara, România" data-en="Timișoara, Romania">Timișoara, România</span>
+                                        <span class="channels__note" data-ro="REMOTE / HIBRID" data-en="REMOTE / HYBRID">REMOTE / HIBRID</span>
+                                    </span>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/in/emanuelstefan/" target="_blank" rel="noopener">
+                                        <span class="channels__label">LINKEDIN</span>
+                                        <span class="channels__value">/in/emanuelstefan</span>
+                                        <span class="channels__note" data-ro="PROFIL PROFESIONAL" data-en="PROFESSIONAL PROFILE">PROFIL PROFESIONAL</span>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <div class="hero__actions">
+                                <a href="tel:+40744387098" class="btn btn--primary">
+                                    <span data-ro="Sună direct" data-en="Call directly">Sună direct</span>
+                                    <span class="btn__arrow" aria-hidden="true">→</span>
                                 </a>
-                            </li>
-                            <li>
-                                <a href="mailto:stefancostiemanuel@gmail.com">
-                                    <span class="contact-list__label" data-ro="Email" data-en="Email">Email</span>
-                                    <span class="contact-list__value">stefancostiemanuel@gmail.com</span>
+                                <a href="mailto:stefancostiemanuel@gmail.com" class="btn btn--ghost">
+                                    <span data-ro="Trimite email" data-en="Send an email">Trimite email</span>
                                 </a>
-                            </li>
-                            <li>
-                                <a href="https://www.linkedin.com/in/emanuelstefan/" target="_blank" rel="noopener">
-                                    <span class="contact-list__label">LinkedIn</span>
-                                    <span class="contact-list__value">/in/emanuelstefan</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="docs/EmanuelStefan_CV.pdf" target="_blank">
-                                    <span class="contact-list__label" data-ro="Document" data-en="Document">Document</span>
-                                    <span class="contact-list__value" data-ro="Descarcă CV-ul" data-en="Download CV">Descarcă CV-ul</span>
-                                </a>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
+
+                        <div class="split__side">
+                            <div class="portrait-lg portrait-lg--sm">
+                                <span class="portrait-lg__ring"></span>
+                                <span class="portrait-lg__ring portrait-lg__ring--delay"></span>
+                                <img src="img/me_sq.jpeg" alt="Emanuel Ștefan">
+                            </div>
+                            <div class="meta-block">
+                                <div class="meta-block__name" data-ro="PROGRAM" data-en="HOURS">PROGRAM</div>
+                                <div data-ro="LUNI — VINERI" data-en="MONDAY — FRIDAY">LUNI — VINERI</div>
+                                <div>09:00 — 18:00 (EET)</div>
+                                <div class="meta-block__divider">
+                                    <div data-ro="CONTRACTE PE PROIECT" data-en="PROJECT-BASED CONTRACTS">CONTRACTE PE PROIECT</div>
+                                    <div data-ro="SAU RETAINER LUNAR" data-en="OR MONTHLY RETAINER">SAU RETAINER LUNAR</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <p class="panel-footer" data-ro="© 2026 Emanuel Ștefan · Timișoara, România" data-en="© 2026 Emanuel Ștefan · Timișoara, Romania">© 2026 Emanuel Ștefan · Timișoara, România</p>
                 </section>
 
-                <footer class="panel-footer">
-                    <p data-ro="© 2026 Emanuel Ștefan · Timișoara, România" data-en="© 2026 Emanuel Ștefan · Timișoara, Romania">© 2026 Emanuel Ștefan · Timișoara, România</p>
-                </footer>
+            </div>
 
+            <div class="status-bar">
+                <span class="status-available">
+                    <span class="status-dot" aria-hidden="true"></span>
+                    <span data-ro="DISPONIBIL PENTRU PROIECTE NOI" data-en="AVAILABLE FOR NEW PROJECTS">DISPONIBIL PENTRU PROIECTE NOI</span>
+                </span>
+                <span class="status-bar__right">
+                    <span class="status-dashes">
+                        <a href="#despre" class="status-dash is-active" aria-label="Despre"></a>
+                        <a href="#experienta" class="status-dash" aria-label="Experiență"></a>
+                        <a href="#contact" class="status-dash" aria-label="Contact"></a>
+                    </span>
+                    <button type="button" class="status-scroll" id="status-scroll">
+                        <span class="status-scroll__label" id="status-scroll-label">SCROLL</span>
+                        <span class="status-scroll__arrow" id="status-scroll-arrow" aria-hidden="true">↓</span>
+                    </button>
+                </span>
             </div>
         </main>
 

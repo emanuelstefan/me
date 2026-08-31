@@ -59,7 +59,6 @@
     var langToggle = document.getElementById('lang-toggle');
     var translatable = document.querySelectorAll('[data-ro][data-en]');
     var langOpts = document.querySelectorAll('.lang-opt');
-    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     var titles = {
         ro: 'Emanuel Ștefan — Software care mișcă afacerea ta înainte',
@@ -71,40 +70,6 @@
         if (stored === 'ro' || stored === 'en') return stored;
         var nav = (navigator.language || 'ro').toLowerCase();
         return nav.indexOf('ro') === 0 ? 'ro' : 'en';
-    }
-
-    /* --------------------------------------------------------------------
-       Hero headline typewriter
-       -------------------------------------------------------------------- */
-
-    var heroHeadline = document.getElementById('hero-headline');
-    var typeTimer = null;
-
-    function typewriteHero(lang) {
-        if (!heroHeadline) return;
-        var text = heroHeadline.getAttribute('data-type-' + lang) || '';
-        heroHeadline.setAttribute('aria-label', text);
-
-        if (typeTimer) clearInterval(typeTimer);
-
-        if (reduceMotion) {
-            heroHeadline.textContent = text;
-            heroHeadline.classList.add('is-done');
-            return;
-        }
-
-        heroHeadline.classList.remove('is-done');
-        heroHeadline.textContent = '';
-        var i = 0;
-
-        typeTimer = setInterval(function () {
-            i++;
-            heroHeadline.textContent = text.slice(0, i);
-            if (i >= text.length) {
-                clearInterval(typeTimer);
-                heroHeadline.classList.add('is-done');
-            }
-        }, 28);
     }
 
     function applyLang(lang) {
@@ -120,8 +85,6 @@
         document.documentElement.setAttribute('lang', lang);
         document.title = titles[lang] || titles.ro;
         localStorage.setItem(STORAGE_KEY, lang);
-
-        typewriteHero(lang);
     }
 
     var lang = detectDefaultLang();
@@ -131,11 +94,12 @@
         langToggle.addEventListener('click', function () {
             lang = lang === 'ro' ? 'en' : 'ro';
             applyLang(lang);
+            updateChrome();
         });
     }
 
     /* --------------------------------------------------------------------
-       Scroll-spy for the in-window nav
+       Scroll-spy for the in-window nav, masthead label and status bar
        -------------------------------------------------------------------- */
 
     var scrollArea = document.getElementById('panel-scroll');
@@ -144,6 +108,39 @@
         var id = link.getAttribute('href').replace('#', '');
         return document.getElementById(id);
     });
+
+    var MASTHEAD_LABELS = {
+        despre: { ro: '01 — DESPRE', en: '01 — ABOUT' },
+        experienta: { ro: '02 — EXPERIENȚĂ', en: '02 — EXPERIENCE' },
+        contact: { ro: '03 — CONTACT', en: '03 — CONTACT' }
+    };
+    var SCROLL_LABEL = { ro: 'SCROLL', en: 'SCROLL' };
+    var UP_LABEL = { ro: 'SUS', en: 'UP' };
+
+    var mastheadLabel = document.getElementById('masthead-label');
+    var statusDashes = document.querySelectorAll('.status-dash');
+    var statusScrollLabel = document.getElementById('status-scroll-label');
+    var statusScrollArrow = document.getElementById('status-scroll-arrow');
+    var activeSectionId = sections[0] ? sections[0].id : null;
+
+    function updateChrome() {
+        if (mastheadLabel && MASTHEAD_LABELS[activeSectionId]) {
+            mastheadLabel.textContent = MASTHEAD_LABELS[activeSectionId][lang] || MASTHEAD_LABELS[activeSectionId].ro;
+        }
+
+        statusDashes.forEach(function (dash) {
+            dash.classList.toggle('is-active', dash.getAttribute('href') === '#' + activeSectionId);
+        });
+
+        var isLast = sections.length && sections[sections.length - 1] && sections[sections.length - 1].id === activeSectionId;
+
+        if (statusScrollLabel) {
+            statusScrollLabel.textContent = (isLast ? UP_LABEL : SCROLL_LABEL)[lang];
+        }
+        if (statusScrollArrow) {
+            statusScrollArrow.textContent = isLast ? '↑' : '↓';
+        }
+    }
 
     function updateActiveLink() {
         if (!scrollArea) return;
@@ -159,6 +156,11 @@
         navLinks.forEach(function (link, i) {
             link.classList.toggle('is-active', i === activeIndex);
         });
+
+        if (sections[activeIndex]) {
+            activeSectionId = sections[activeIndex].id;
+        }
+        updateChrome();
     }
 
     if (scrollArea) {
@@ -166,17 +168,33 @@
         updateActiveLink();
     }
 
-    navLinks.forEach(function (link) {
+    function goToSection(id) {
+        var target = document.getElementById(id);
+        if (target && scrollArea) {
+            scrollArea.scrollTo({ top: target.offsetTop - 4, behavior: 'smooth' });
+        }
+    }
+
+    var jumpLinks = document.querySelectorAll('.nav__mark, .nav__link, .status-dash, #panel-scroll a[href^="#"]');
+
+    jumpLinks.forEach(function (link) {
         link.addEventListener('click', function (e) {
             var id = link.getAttribute('href').replace('#', '');
-            var target = document.getElementById(id);
-            if (target && scrollArea) {
-                e.preventDefault();
-                scrollArea.scrollTo({
-                    top: target.offsetTop - 4,
-                    behavior: 'smooth'
-                });
-            }
+            if (!document.getElementById(id)) return;
+            e.preventDefault();
+            goToSection(id);
         });
     });
+
+    var statusScrollBtn = document.getElementById('status-scroll');
+    if (statusScrollBtn) {
+        statusScrollBtn.addEventListener('click', function () {
+            var idx = 0;
+            sections.forEach(function (s, i) {
+                if (s && s.id === activeSectionId) idx = i;
+            });
+            var nextIdx = (idx === sections.length - 1) ? 0 : idx + 1;
+            if (sections[nextIdx]) goToSection(sections[nextIdx].id);
+        });
+    }
 })();
