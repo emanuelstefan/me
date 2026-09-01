@@ -419,7 +419,8 @@ body {
     justify-content: flex-start;
 }
 
-.section.experienta {
+.section.experienta,
+.section.servicii {
     padding-bottom: 120px;
 }
 
@@ -588,11 +589,6 @@ h1, h2, h3 {
     flex: none;
 }
 
-.portrait-lg--sm {
-    width: 136px;
-    height: 136px;
-}
-
 .portrait-lg__ring {
     position: absolute;
     inset: 0;
@@ -647,6 +643,21 @@ h1, h2, h3 {
     padding-top: 12px;
     border-top: 1px solid var(--hairline);
     color: var(--ink-faint);
+}
+
+.meta-block--terms {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--hairline);
+}
+
+.meta-block--terms p {
+    margin: 6px 0 0;
+    font-family: var(--font-editorial-body);
+    font-size: 0.8rem;
+    line-height: 1.55;
+    letter-spacing: normal;
+    color: var(--ink-soft);
 }
 
 /* ==========================================================================
@@ -802,6 +813,52 @@ a.btn--primary:hover {
 }
 
 /* ==========================================================================
+   Servicii — service list
+   ========================================================================== */
+
+.service-list {
+    margin-top: 32px;
+    border-top: 1px solid var(--hairline);
+}
+
+.service-row {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 0.95fr) minmax(0, 1.3fr);
+    gap: 10px 24px;
+    align-items: start;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--hairline);
+    transition: background 0.25s var(--ease);
+}
+
+.service-row:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.service-row__tag {
+    font-family: var(--font-mono);
+    font-size: 0.64rem;
+    letter-spacing: 0.1em;
+    color: var(--moss);
+    padding-top: 5px;
+}
+
+.service-row__title {
+    font-family: var(--font-editorial);
+    font-weight: 600;
+    font-size: 1.12rem;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+}
+
+.service-row p {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--ink-soft);
+}
+
+/* ==========================================================================
    Contact — channel list
    ========================================================================== */
 
@@ -900,6 +957,12 @@ button:focus-visible {
         gap: 22px;
     }
 
+    .contact .split__side {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
     .meta-block {
         margin-top: 0;
     }
@@ -927,6 +990,15 @@ button:focus-visible {
         padding-top: 0;
     }
 
+    .service-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .service-row__tag {
+        padding-top: 0;
+    }
+
     .channels a,
     .channels__row {
         grid-template-columns: 1fr;
@@ -944,11 +1016,6 @@ button:focus-visible {
     .portrait-lg {
         width: 116px;
         height: 116px;
-    }
-
-    .portrait-lg--sm {
-        width: 100px;
-        height: 100px;
     }
 }
 

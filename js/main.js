@@ -187,7 +187,8 @@
     var MASTHEAD_LABELS = {
         despre: { ro: '01 — DESPRE', en: '01 — ABOUT' },
         experienta: { ro: '02 — EXPERIENȚĂ', en: '02 — EXPERIENCE' },
-        contact: { ro: '03 — CONTACT', en: '03 — CONTACT' }
+        servicii: { ro: '03 — SERVICII', en: '03 — SERVICES' },
+        contact: { ro: '04 — CONTACT', en: '04 — CONTACT' }
     };
     var SCROLL_LABEL = { ro: 'SCROLL', en: 'SCROLL' };
     var UP_LABEL = { ro: 'SUS', en: 'UP' };
