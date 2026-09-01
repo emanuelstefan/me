@@ -96,8 +96,10 @@
 
     var typeLines = [
         document.getElementById('type-line-1'),
-        document.getElementById('type-line-2'),
-        document.getElementById('type-line-3')
+        document.getElementById('type-seg-1'),
+        document.getElementById('type-seg-2'),
+        document.getElementById('type-seg-3'),
+        document.getElementById('type-seg-4')
     ];
     var headlineCaret = document.getElementById('headline-caret');
     var typeTimer = null;
@@ -140,7 +142,7 @@
                 lineIdx++;
                 charIdx = 0;
                 if (lineIdx >= typeLines.length) return;
-                typeTimer = setTimeout(step, LINE_PAUSE);
+                typeTimer = setTimeout(step, (lineIdx === 1 || lineIdx === 2) ? LINE_PAUSE : TYPE_SPEED);
                 return;
             }
             typeTimer = setTimeout(step, TYPE_SPEED);
