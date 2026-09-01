@@ -90,11 +90,73 @@
     var lang = detectDefaultLang();
     applyLang(lang);
 
+    /* --------------------------------------------------------------------
+       Despre headline typewriter
+       -------------------------------------------------------------------- */
+
+    var typeLines = [
+        document.getElementById('type-line-1'),
+        document.getElementById('type-line-2'),
+        document.getElementById('type-line-3')
+    ];
+    var headlineCaret = document.getElementById('headline-caret');
+    var typeTimer = null;
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var TYPE_SPEED = 28;
+    var LINE_PAUSE = 110;
+
+    function typewriteHeadline(typeLang) {
+        if (!typeLines[0]) return;
+        if (typeTimer) clearTimeout(typeTimer);
+
+        var texts = typeLines.map(function (el) {
+            return el.getAttribute('data-type-' + typeLang) || '';
+        });
+
+        typeLines.forEach(function (el) { el.textContent = ''; });
+        if (headlineCaret) headlineCaret.classList.remove('is-visible');
+
+        if (reduceMotion) {
+            typeLines.forEach(function (el, i) { el.textContent = texts[i]; });
+            if (headlineCaret) headlineCaret.classList.add('is-visible');
+            return;
+        }
+
+        var lineIdx = 0;
+        var charIdx = 0;
+
+        function step() {
+            var el = typeLines[lineIdx];
+            var text = texts[lineIdx];
+
+            if (lineIdx === typeLines.length - 1 && headlineCaret) {
+                headlineCaret.classList.add('is-visible');
+            }
+
+            charIdx++;
+            el.textContent = text.slice(0, charIdx);
+
+            if (charIdx >= text.length) {
+                lineIdx++;
+                charIdx = 0;
+                if (lineIdx >= typeLines.length) return;
+                typeTimer = setTimeout(step, LINE_PAUSE);
+                return;
+            }
+            typeTimer = setTimeout(step, TYPE_SPEED);
+        }
+
+        step();
+    }
+
+    typewriteHeadline(lang);
+
     if (langToggle) {
         langToggle.addEventListener('click', function () {
             lang = lang === 'ro' ? 'en' : 'ro';
             applyLang(lang);
             updateChrome();
+            typewriteHeadline(lang);
         });
     }
 

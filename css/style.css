@@ -501,6 +501,11 @@ h1, h2, h3 {
     margin-left: 0.12em;
     background: var(--moss);
     vertical-align: -0.03em;
+    opacity: 0;
+}
+
+.blink-caret.is-visible {
+    opacity: 1;
     animation: caret-blink 1.2s steps(1) infinite;
 }
 
