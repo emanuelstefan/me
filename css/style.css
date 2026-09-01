@@ -386,11 +386,13 @@ body {
    ========================================================================== */
 
 .panel-scroll {
+    position: relative;
     flex: 1;
+    min-height: 0;
     overflow-y: auto;
     scroll-behavior: smooth;
     font-family: var(--font-editorial-body);
-    padding: clamp(28px, 5vw, 48px) clamp(20px, 5vw, 48px) 40px;
+    padding: clamp(28px, 5vw, 48px) clamp(20px, 4vw, 40px) 40px;
 }
 
 .panel-scroll::-webkit-scrollbar {
@@ -409,10 +411,10 @@ body {
 .section {
     scroll-margin-top: 8px;
     min-height: 100%;
-    padding: 12px 0 36px;
+    padding: 40px 0 36px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .divider {
@@ -498,7 +500,7 @@ h1, h2, h3 {
     height: 0.1em;
     margin-left: 0.12em;
     background: var(--moss);
-    vertical-align: 0.14em;
+    vertical-align: -0.03em;
     animation: caret-blink 1.2s steps(1) infinite;
 }
 
@@ -696,32 +698,38 @@ a.btn--primary:hover {
 
 .exp__top {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 200px;
+    grid-template-columns: minmax(0, 1fr) 320px;
     gap: 0 40px;
-    align-items: start;
+    align-items: center;
 }
 
 .exp__stats {
+    display: flex;
+    gap: 28px;
+    padding-left: 36px;
     border-left: 1px solid var(--hairline);
-    padding-left: 30px;
-    display: grid;
-    gap: 20px;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .stat__num {
     font-family: var(--font-editorial);
     font-weight: 700;
-    font-size: 2.15rem;
+    font-size: clamp(1.9rem, 2.6vw, 2.3rem);
+    line-height: 1;
     color: var(--ink);
     letter-spacing: -0.02em;
-    line-height: 1;
 }
 
 .stat__label {
-    margin-top: 5px;
     font-family: var(--font-mono);
-    font-size: 0.66rem;
-    letter-spacing: 0.12em;
+    font-size: 0.62rem;
+    line-height: 1.35;
+    letter-spacing: 0.1em;
     color: var(--stone);
 }
 
@@ -886,11 +894,10 @@ button:focus-visible {
     .exp__stats {
         border-left: none;
         padding-left: 0;
+        padding-top: 22px;
         border-top: 1px solid var(--hairline);
-        padding-top: 20px;
-        grid-auto-flow: column;
-        justify-content: start;
-        gap: 32px;
+        flex-wrap: wrap;
+        gap: 20px 28px;
     }
 
     .timeline__row {

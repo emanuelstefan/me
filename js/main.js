@@ -109,6 +109,17 @@
         return document.getElementById(id);
     });
 
+    function sizeSections() {
+        if (!scrollArea) return;
+        var h = scrollArea.clientHeight + 'px';
+        sections.forEach(function (s) {
+            if (s) s.style.minHeight = h;
+        });
+    }
+
+    sizeSections();
+    window.addEventListener('resize', sizeSections);
+
     var MASTHEAD_LABELS = {
         despre: { ro: '01 — DESPRE', en: '01 — ABOUT' },
         experienta: { ro: '02 — EXPERIENȚĂ', en: '02 — EXPERIENCE' },
@@ -171,7 +182,8 @@
     function goToSection(id) {
         var target = document.getElementById(id);
         if (target && scrollArea) {
-            scrollArea.scrollTo({ top: target.offsetTop - 4, behavior: 'smooth' });
+            var isFirst = sections[0] && sections[0].id === id;
+            scrollArea.scrollTo({ top: isFirst ? 0 : target.offsetTop, behavior: 'smooth' });
         }
     }
 
