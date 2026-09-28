@@ -32,10 +32,13 @@
 
 html, body {
     height: 100%;
+    overflow: hidden;
+    overscroll-behavior: none;
 }
 
 body {
     margin: 0;
+    padding: min(6vh, 60px) 0;
     font-family: var(--font-body);
     color: var(--ink);
     -webkit-font-smoothing: antialiased;
@@ -98,7 +101,7 @@ body {
     flex-direction: column;
     width: min(94vw, 980px);
     height: min(88vh, 880px);
-    margin: min(6vh, 60px) auto;
+    margin: 0 auto;
     background: var(--panel-bg);
     backdrop-filter: blur(22px) saturate(1.15);
     -webkit-backdrop-filter: blur(22px) saturate(1.15);
@@ -728,6 +731,18 @@ a.btn--primary:hover {
     color: var(--ink-faint);
 }
 
+.micro-note--link {
+    text-decoration: none;
+    border-bottom: 1px solid var(--hairline);
+    padding-bottom: 2px;
+    transition: color 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+
+.micro-note--link:hover {
+    color: var(--moss);
+    border-color: var(--moss);
+}
+
 /* ==========================================================================
    Experiență — stats + timeline
    ========================================================================== */
@@ -795,6 +810,7 @@ a.btn--primary:hover {
     text-align: left;
     gap: 1px;
     padding-top: 2px;
+    padding-left: 16px;
 }
 
 .timeline__years-num {
@@ -1079,6 +1095,10 @@ button:focus-visible {
 }
 
 @media (max-width: 620px) {
+    body {
+        padding: 0;
+    }
+
     .window {
         width: 100vw;
         height: 100dvh;
