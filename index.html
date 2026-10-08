@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <title>Emanuel Ștefan — Software care mișcă afacerea ta înainte</title>
-        <meta name="description" content="Emanuel Ștefan, inginer software cu 14+ ani de experiență. Automatizări, aplicații web pe măsură și integrări pentru afaceri care vor să crească.">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Emanuel Ștefan, inginer software cu 15 ani de experiență. Automatizări, aplicații web pe măsură și integrări pentru afaceri care vor să crească.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
         <link rel="icon" type="image/x-icon" href="favicon.ico">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,7 +26,7 @@
             <nav class="nav">
                 <a href="#despre" class="nav__mark">ES</a>
 
-                <div class="nav__links">
+                <div class="nav__links" id="nav-links">
                     <a href="#despre" class="nav__link" data-ro="Despre" data-en="About">Despre</a>
                     <a href="#experienta" class="nav__link" data-ro="Experiență" data-en="Experience">Experiență</a>
                     <a href="#servicii" class="nav__link" data-ro="Servicii" data-en="Services">Servicii</a>
@@ -35,6 +35,12 @@
 
                 <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Schimbă limba site-ului / Switch site language">
                     <span class="lang-opt" data-lang="ro">RO</span><span class="lang-sep">/</span><span class="lang-opt" data-lang="en">EN</span>
+                </button>
+
+                <button class="nav-toggle" id="nav-toggle" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Deschide meniul / Open menu">
+                    <span class="nav-toggle__line"></span>
+                    <span class="nav-toggle__line"></span>
+                    <span class="nav-toggle__line"></span>
                 </button>
             </nav>
 
@@ -50,7 +56,7 @@
                     <div class="split">
                         <div class="split__main">
                             <p class="kicker">
-                                <span class="kicker__accent">14+</span>
+                                <span class="kicker__accent">15</span>
                                 <span data-ro="ANI ÎN SOFTWARE LA COMANDĂ" data-en="YEARS BUILDING SOFTWARE ON DEMAND">ANI ÎN SOFTWARE LA COMANDĂ</span>
                             </p>
 
@@ -110,12 +116,12 @@
                             <h2 class="editorial-h2">
                                 <span data-ro="Sisteme care rămân" data-en="Systems that stay">Sisteme care rămân</span> <span class="editorial-h1__accent" data-ro="în producție." data-en="in production.">în producție.</span>
                             </h2>
-                            <p data-ro="Patrusprezece ani de la primul script de automatizare până la platforme interne folosite zilnic de sute de oameni. Mai jos, traseul pe scurt." data-en="Fourteen years from the first automation script to internal platforms used daily by hundreds of people. Here's the short version.">Patrusprezece ani de la primul script de automatizare până la platforme interne folosite zilnic de sute de oameni. Mai jos, traseul pe scurt.</p>
+                            <p data-ro="15 ani, de la interfețe SCADA și primele aplicații web până la platforme folosite de companii Fortune 100 și de zeci de mii de școli. Mai jos, traseul pe scurt." data-en="15 years, from SCADA interfaces and my first web apps to platforms used by Fortune 100 companies and tens of thousands of schools. Here's the short version.">15 ani, de la interfețe SCADA și primele aplicații web până la platforme folosite de companii Fortune 100 și de zeci de mii de școli. Mai jos, traseul pe scurt.</p>
                         </div>
 
                         <div class="exp__stats">
                             <div class="stat">
-                                <span class="stat__num">14</span>
+                                <span class="stat__num">15</span>
                                 <span class="stat__label" data-ro="ANI EXPERIENȚĂ" data-en="YEARS EXPERIENCE">ANI EXPERIENȚĂ</span>
                             </div>
                             <div class="stat">
@@ -153,7 +159,7 @@
                                 <div class="timeline__title" data-ro="Senior software engineer &amp; team lead" data-en="Senior software engineer &amp; team lead">Senior software engineer &amp; team lead</div>
                                 <div class="timeline__tag" data-ro="ARHITECTURĂ · LEADERSHIP" data-en="ARCHITECTURE · LEADERSHIP">ARHITECTURĂ · LEADERSHIP</div>
                             </div>
-                            <p data-ro="La Ativion și, din 2024, la Devtactics, am dus funcționalități de la idee la producție pentru un ecosistem folosit de peste 30.000 de școli și jumătate din companiile Fortune 100 — și am condus, pentru o vreme, echipa care le construiește." data-en="At Ativion and, since 2024, at Devtactics, I took features from idea to production for an ecosystem used by over 30,000 schools and half of the Fortune 100 — and for a while, led the team building them.">La Ativion și, din 2024, la Devtactics, am dus funcționalități de la idee la producție pentru un ecosistem folosit de peste 30.000 de școli și jumătate din companiile Fortune 100 — și am condus, pentru o vreme, echipa care le construiește.</p>
+                            <p data-ro="La Ativion, funcționalități pentru o platformă folosită de companii Fortune 100 și de peste 30.000 de școli — iar în 2024 am condus echipa responsabilă de siguranța online și starea de bine a elevilor. Apoi, la DevTactics, funcționalități de bază pentru o platformă de project management la scară mare." data-en="At Ativion, features for a platform used by Fortune 100 companies and over 30,000 schools — and in 2024, I led the team responsible for student well-being and online safety. Then, at DevTactics, core features for a large-scale project management platform.">La Ativion, funcționalități pentru o platformă folosită de companii Fortune 100 și de peste 30.000 de școli — iar în 2024 am condus echipa responsabilă de siguranța online și starea de bine a elevilor. Apoi, la DevTactics, funcționalități de bază pentru o platformă de project management la scară mare.</p>
                         </div>
 
                         <div class="timeline__row">
@@ -166,7 +172,7 @@
                                 <div class="timeline__title" data-ro="Software engineer, echipe distribuite" data-en="Software engineer, distributed teams">Software engineer, echipe distribuite</div>
                                 <div class="timeline__tag" data-ro="RUBY ON RAILS · REACT" data-en="RUBY ON RAILS · REACT">RUBY ON RAILS · REACT</div>
                             </div>
-                            <p data-ro="Backend și frontend pentru aplicații la scară — de la un produs de project management la o soluție pentru industria de sănătate, alături de echipe multinaționale." data-en="Backend and frontend for applications at scale — from a project management product to a healthcare-industry solution, alongside multinational teams.">Backend și frontend pentru aplicații la scară — de la un produs de project management la o soluție pentru industria de sănătate, alături de echipe multinaționale.</p>
+                            <p data-ro="Backend și frontend pentru aplicații la scară mare, alături de echipe multinaționale — de la proiecte variate la 3Pillar Global până la o platformă de microservicii pentru industria sănătății." data-en="Backend and frontend for large-scale applications, alongside multinational teams — from varied projects at 3Pillar Global to a healthcare microservices platform.">Backend și frontend pentru aplicații la scară mare, alături de echipe multinaționale — de la proiecte variate la 3Pillar Global până la o platformă de microservicii pentru industria sănătății.</p>
                         </div>
 
                         <div class="timeline__row">
@@ -176,10 +182,10 @@
                                 <span class="timeline__years-num">2019</span>
                             </div>
                             <div>
-                                <div class="timeline__title" data-ro="Software engineer, FinTech &amp; agenție" data-en="Software engineer, FinTech &amp; agency">Software engineer, FinTech &amp; agenție</div>
+                                <div class="timeline__title" data-ro="Software engineer, FinTech" data-en="Software engineer, FinTech">Software engineer, FinTech</div>
                                 <div class="timeline__tag" data-ro="BACKEND · RUBY ON RAILS" data-en="BACKEND · RUBY ON RAILS">BACKEND · RUBY ON RAILS</div>
                             </div>
-                            <p data-ro="Cinci ani de backend Ruby on Rails, în mare parte pe o soluție FinTech — planificare, dezvoltare și testare pentru un produs cu miză reală." data-en="Five years of Ruby on Rails backend work, mostly on a FinTech solution — planning, development, and testing for a product with real stakes.">Cinci ani de backend Ruby on Rails, în mare parte pe o soluție FinTech — planificare, dezvoltare și testare pentru un produs cu miză reală.</p>
+                            <p data-ro="5 ani de backend Ruby on Rails, în mare parte pe o soluție FinTech — planificare, dezvoltare și testare pentru un produs cu miză reală." data-en="5 years of Ruby on Rails backend work, mostly on a FinTech solution — planning, development, and testing for a product with real stakes.">5 ani de backend Ruby on Rails, în mare parte pe o soluție FinTech — planificare, dezvoltare și testare pentru un produs cu miză reală.</p>
                         </div>
                     </div>
 
