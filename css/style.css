@@ -467,7 +467,8 @@ body {
 }
 
 .section.experienta,
-.section.servicii {
+.section.servicii,
+.section.colaborari {
     padding-bottom: 120px;
 }
 
@@ -1207,7 +1208,8 @@ button:focus-visible {
     }
 
     .section.experienta,
-    .section.servicii {
+    .section.servicii,
+    .section.colaborari {
         padding-bottom: 72px;
     }
 

@@ -188,7 +188,8 @@
         despre: { ro: '01 — DESPRE', en: '01 — ABOUT' },
         experienta: { ro: '02 — EXPERIENȚĂ', en: '02 — EXPERIENCE' },
         servicii: { ro: '03 — SERVICII', en: '03 — SERVICES' },
-        contact: { ro: '04 — CONTACT', en: '04 — CONTACT' }
+        colaborari: { ro: '04 — COLABORĂRI', en: '04 — COLLABORATIONS' },
+        contact: { ro: '05 — CONTACT', en: '05 — CONTACT' }
     };
     var SCROLL_LABEL = { ro: 'SCROLL', en: 'SCROLL' };
     var UP_LABEL = { ro: 'SUS', en: 'UP' };
